@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Round Trip Fare Comparison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel panel--form">
+        <p class="eyebrow">Nitish sarkar treval booking</p>
+        <h1>Design your round trip like a pro and save your money and time </h1>
+        <p class="lede">
+          Compare premium sleeper buses, AC rail cabins, and economy flights
+          across India's busiest metro corridors. Get a fast, visual breakdown
+          for every mode before you book.
+        </p>
+
+
+        <div class="stats-row">
+          <article class="stat-card">
+            <span class="stat-label">Available modes</span>
+            <strong>5</strong>
+            <small>Bus · Sleeper · AC 3 · AC 2 · Flight</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">City pairs covered</span>
+            <strong>20+</strong>
+            <small>Major Indian metros & business hubs</small>
+          </article>
+        </div>
+
+        <form id="trip-form" class="form-card">
+          <div>
+            <label for="source">Source</label>
+            <select id="source" required></select>
+          </div>
+
+          <div>
+            <label for="destination">Destination</label>
+            <select id="destination" required></select>
+          </div>
+
+          <div class="split">
+            <div>
+              <label for="depart">Depart date</label>
+              <input type="date" id="depart" required />
+            </div>
+            <div>
+              <label for="return">Return date</label>
+              <input type="date" id="return" required />
+            </div>
+          </div>
+
+          <div class="split">
+            <div>
+              <label for="travelers">Travellers</label>
+              <input
+                type="number"
+                id="travelers"
+                min="1"
+                max="10"
+                step="1"
+                value="1"
+                required
+              />
+            </div>
+            <div>
+              <label for="flex">Flexibility (days)</label>
+              <input
+                type="number"
+                id="flex"
+                min="0"
+                max="10"
+                step="1"
+                value="0"
+              />
+            </div>
+          </div>
+
+          <button type="submit">Compare round-trip prices</button>
+        </form>
+      </section>
+
+      <section
+        class="panel results"
+        id="results"
+        aria-live="polite"
+        aria-busy="false"
+      >
+        <div class="empty">
+          Enter trip details to instantly compare fares across all modes.
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
+
